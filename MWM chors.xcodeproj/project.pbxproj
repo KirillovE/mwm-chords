@@ -18,6 +18,7 @@
 		3E4008F125865EDA00A8D48B /* PickerChordsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4008F025865EDA00A8D48B /* PickerChordsData.swift */; };
 		3E4008FD2586622600A8D48B /* AlertErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4008FC2586622600A8D48B /* AlertErrorHandler.swift */; };
 		3E4009002586635600A8D48B /* ModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4008FF2586635600A8D48B /* ModelProvider.swift */; };
+		3E40090325866D7200A8D48B /* Array+safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E40090225866D7200A8D48B /* Array+safe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		3E4008F025865EDA00A8D48B /* PickerChordsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerChordsData.swift; sourceTree = "<group>"; };
 		3E4008FC2586622600A8D48B /* AlertErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertErrorHandler.swift; sourceTree = "<group>"; };
 		3E4008FF2586635600A8D48B /* ModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProvider.swift; sourceTree = "<group>"; };
+		3E40090225866D7200A8D48B /* Array+safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+safe.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				3E4008AB2586370900A8D48B /* Assets.xcassets */,
 				3E4008AD2586370900A8D48B /* LaunchScreen.storyboard */,
 				3E4008B02586370900A8D48B /* Info.plist */,
+				3E40090225866D7200A8D48B /* Array+safe.swift */,
 			);
 			path = "MWM chors";
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 				3E4008FD2586622600A8D48B /* AlertErrorHandler.swift in Sources */,
 				3E4008F125865EDA00A8D48B /* PickerChordsData.swift in Sources */,
 				3E4009002586635600A8D48B /* ModelProvider.swift in Sources */,
+				3E40090325866D7200A8D48B /* Array+safe.swift in Sources */,
 				3E4008EB25865A7800A8D48B /* NetworkController.swift in Sources */,
 				3E4008EE25865BE900A8D48B /* TextualError.swift in Sources */,
 				3E4008A72586370600A8D48B /* ViewController.swift in Sources */,

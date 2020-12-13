@@ -20,15 +20,33 @@ final class ViewController: UIViewController {
     private let sampleChords2 = (0...9).map { "Sample 2 - \($0)" }
     private let sampleChords3 = (0...9).map { "Sample 3 - \($0)" }
     
+    private let modelProvider = ModelProvider()
+    
+    private var chordsData = [SingleChord]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.currentKeyIndex = 0
+                self.keyPicker.reloadAllComponents()
+                self.chordPicker.reloadAllComponents()
+            }
+        }
+    }
+    
     private lazy var selectedChords = sampleChords1 {
         didSet {
             chordPicker.reloadAllComponents()
         }
     }
     
-    private lazy var currentChord = (key: sampleKeys.first!, chord: selectedChords.first!) {
+    private var currentKeyIndex = 0 {
         didSet {
-            chordDataLabel.text = "\(currentChord.key) – \(currentChord.chord)"
+            updateChordLabel(keyIndex: currentKeyIndex, suffixIndex: 0)
+        }
+    }
+    
+    private var currentChordIndex = 0 {
+        didSet {
+            updateChordLabel(keyIndex: currentKeyIndex, suffixIndex: currentChordIndex)
         }
     }
     
@@ -38,10 +56,11 @@ final class ViewController: UIViewController {
         super.viewDidLoad()
         initialSetup()
         setDelegates()
+        getChords()
     }
     
     private func initialSetup() {
-        currentChord = (key: sampleKeys.first!, chord: selectedChords.first!)
+        currentKeyIndex = 0
         keyPicker.transform = CGAffineTransform(rotationAngle: -(.pi / 2))
         chordPicker.transform = CGAffineTransform(rotationAngle: -(.pi / 2))
     }
@@ -51,6 +70,19 @@ final class ViewController: UIViewController {
         keyPicker.delegate = self
         chordPicker.dataSource = self
         chordPicker.delegate = self
+    }
+    
+    private func getChords() {
+        modelProvider.provideData { [weak self] allChords in
+            self?.chordsData = allChords.chords
+        }
+    }
+    
+    private func updateChordLabel(keyIndex: Int, suffixIndex: Int) {
+        let chord = chordsData[safe: keyIndex]
+        let key = chord?.keyName ?? "key"
+        let suffix = chord?.chordSuffixes[safe: suffixIndex] ?? "suffix"
+        chordDataLabel.text = "\(key) – \(suffix)"
     }
 
 }
@@ -65,8 +97,8 @@ extension ViewController: UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         pickerView === keyPicker
-            ? sampleKeys.count
-            : selectedChords.count
+            ? chordsData.count
+            : chordsData[safe: currentKeyIndex]?.chordSuffixes.count ?? 0
     }
     
 }
@@ -83,8 +115,8 @@ extension ViewController: UIPickerViewDelegate {
     ) -> UIView {
         let label = UILabel()
         label.text = pickerView === keyPicker
-            ? sampleKeys[row]
-            : selectedChords[row]
+            ? chordsData[safe: row]?.keyName
+            : chordsData[safe: currentKeyIndex]?.chordSuffixes[safe: row]
         label.transform = CGAffineTransform(rotationAngle: .pi / 2)
         return label
     }
@@ -94,22 +126,11 @@ extension ViewController: UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        pickerView === keyPicker
-            ? updateKey(row)
-            : updateChord(row)
-    }
-    
-    private func updateKey(_ newKeyIndex: Int) {
-        let newKey = sampleKeys[newKeyIndex]
-        currentChord.key = newKey
-        let newChordSample = [sampleChords1, sampleChords2, sampleChords3].randomElement()
-        selectedChords = newChordSample!
-        updateChord(0)
-    }
-    
-    private func updateChord(_ newChordIndex: Int) {
-        let newChord = selectedChords[newChordIndex]
-        currentChord.chord = newChord
+        if pickerView === keyPicker {
+            currentKeyIndex = row
+        } else {
+            currentChordIndex = row
+        }
     }
     
 }
