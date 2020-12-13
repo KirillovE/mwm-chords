@@ -24,9 +24,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t1a-vC-5gx" userLabel="Chord Picker">
-                                <rect key="frame" x="157" y="484" width="100" height="538"/>
+                                <rect key="frame" x="182" y="484" width="50" height="538"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="4iv-Dz-PE9"/>
+                                    <constraint firstAttribute="width" constant="50" id="4iv-Dz-PE9"/>
                                 </constraints>
                             </pickerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="blS-WR-9OZ" userLabel="Splitter">
@@ -38,9 +38,9 @@
                                 </constraints>
                             </view>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oaX-fr-vER" userLabel="Key Picker">
-                                <rect key="frame" x="157" y="341" width="100" height="538"/>
+                                <rect key="frame" x="172" y="341" width="70" height="538"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="eir-NR-eI4"/>
+                                    <constraint firstAttribute="width" constant="70" id="eir-NR-eI4"/>
                                 </constraints>
                             </pickerView>
                         </subviews>
