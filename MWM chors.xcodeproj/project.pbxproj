@@ -15,6 +15,7 @@
 		3E4008E42586571900A8D48B /* AllChordsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4008E32586571900A8D48B /* AllChordsData.swift */; };
 		3E4008EB25865A7800A8D48B /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4008EA25865A7800A8D48B /* NetworkController.swift */; };
 		3E4008EE25865BE900A8D48B /* TextualError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4008ED25865BE900A8D48B /* TextualError.swift */; };
+		3E4008F125865EDA00A8D48B /* PickerChordsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4008F025865EDA00A8D48B /* PickerChordsData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		3E4008E32586571900A8D48B /* AllChordsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllChordsData.swift; sourceTree = "<group>"; };
 		3E4008EA25865A7800A8D48B /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		3E4008ED25865BE900A8D48B /* TextualError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextualError.swift; sourceTree = "<group>"; };
+		3E4008F025865EDA00A8D48B /* PickerChordsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerChordsData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				3E4008E32586571900A8D48B /* AllChordsData.swift */,
 				3E4008A62586370600A8D48B /* ViewController.swift */,
 				3E4008EA25865A7800A8D48B /* NetworkController.swift */,
+				3E4008F025865EDA00A8D48B /* PickerChordsData.swift */,
 				3E4008ED25865BE900A8D48B /* TextualError.swift */,
 				3E4008A82586370600A8D48B /* Main.storyboard */,
 				3E4008AB2586370900A8D48B /* Assets.xcassets */,
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E4008F125865EDA00A8D48B /* PickerChordsData.swift in Sources */,
 				3E4008EB25865A7800A8D48B /* NetworkController.swift in Sources */,
 				3E4008EE25865BE900A8D48B /* TextualError.swift in Sources */,
 				3E4008A72586370600A8D48B /* ViewController.swift in Sources */,
