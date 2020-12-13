@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class NetworkController {
+struct NetworkController {
     
     typealias ChordsResponse = Result<AllChordsData, TextualError>
     
@@ -19,8 +19,9 @@ final class NetworkController {
         var request = URLRequest(url: URL)
         request.httpMethod = "GET"
         
-        let task = session.dataTask(with: request) { [weak self] (data: Data?, _, error: Error?) -> Void in
-            if let responseData = data, let response = self?.decodeData(responseData) {
+        let task = session.dataTask(with: request) { (data: Data?, _, error: Error?) -> Void in
+            if let responseData = data {
+                let response = self.decodeData(responseData)
                 completion(response)
             } else if let error = error {
                 let error = TextualError(stringLiteral: error.localizedDescription)
