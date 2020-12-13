@@ -42,6 +42,8 @@ final class ViewController: UIViewController {
     
     private func initialSetup() {
         currentChord = (key: sampleKeys.first!, chord: selectedChords.first!)
+        keyPicker.transform = CGAffineTransform(rotationAngle: -(.pi / 2))
+        chordPicker.transform = CGAffineTransform(rotationAngle: -(.pi / 2))
     }
     
     private func setDelegates() {
@@ -73,10 +75,22 @@ extension ViewController: UIPickerViewDataSource {
 
 extension ViewController: UIPickerViewDelegate {
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        pickerView === keyPicker
+    func pickerView(
+        _ pickerView: UIPickerView,
+        viewForRow row: Int,
+        forComponent component: Int,
+        reusing view: UIView?
+    ) -> UIView {
+        let label = UILabel()
+        label.text = pickerView === keyPicker
             ? sampleKeys[row]
             : selectedChords[row]
+        label.transform = CGAffineTransform(rotationAngle: .pi / 2)
+        return label
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        100
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
