@@ -15,11 +15,6 @@ final class ViewController: UIViewController {
     @IBOutlet weak var keyPicker: UIPickerView!
     @IBOutlet weak var chordPicker: UIPickerView!
     
-    private let sampleKeys = (0...6).map { "Key \($0)" }
-    private let sampleChords1 = (0...9).map { "Sample 1 - \($0)" }
-    private let sampleChords2 = (0...9).map { "Sample 2 - \($0)" }
-    private let sampleChords3 = (0...9).map { "Sample 3 - \($0)" }
-    
     private let modelProvider = ModelProvider()
     
     private var chordsData = [SingleChord]() {
@@ -29,12 +24,6 @@ final class ViewController: UIViewController {
                 self.keyPicker.reloadAllComponents()
                 self.chordPicker.reloadAllComponents()
             }
-        }
-    }
-    
-    private lazy var selectedChords = sampleChords1 {
-        didSet {
-            chordPicker.reloadAllComponents()
         }
     }
     
