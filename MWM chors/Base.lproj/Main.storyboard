@@ -17,8 +17,49 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chord data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zx2-Pe-ToL">
+                                <rect key="frame" x="109.5" y="196" width="195" height="42"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="35"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t1a-vC-5gx" userLabel="Chord Picker">
+                                <rect key="frame" x="47" y="666" width="320" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="VxC-jM-icK"/>
+                                </constraints>
+                            </pickerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="blS-WR-9OZ" userLabel="Splitter">
+                                <rect key="frame" x="172" y="643" width="70" height="3"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="drL-6s-Wco"/>
+                                    <constraint firstAttribute="height" constant="3" id="oHB-fM-mgQ"/>
+                                </constraints>
+                            </view>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oaX-fr-vER" userLabel="Key Picker">
+                                <rect key="frame" x="47" y="523" width="320" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="yL9-YG-F7Y"/>
+                                </constraints>
+                            </pickerView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Zx2-Pe-ToL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="108" id="4m4-Jc-GyM"/>
+                            <constraint firstItem="blS-WR-9OZ" firstAttribute="top" secondItem="oaX-fr-vER" secondAttribute="bottom" constant="20" id="8kb-4G-HxA"/>
+                            <constraint firstItem="oaX-fr-vER" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="CJM-Hi-lLf"/>
+                            <constraint firstItem="oaX-fr-vER" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.772947" id="L33-ix-DeP"/>
+                            <constraint firstItem="t1a-vC-5gx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="L9h-1J-Lf4"/>
+                            <constraint firstItem="Zx2-Pe-ToL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="MCX-ia-Y5e"/>
+                            <constraint firstItem="t1a-vC-5gx" firstAttribute="top" secondItem="blS-WR-9OZ" secondAttribute="bottom" constant="20" id="Q7X-0R-fu8"/>
+                            <constraint firstItem="t1a-vC-5gx" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.772947" id="R9g-NR-AgD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Zx2-Pe-ToL" secondAttribute="trailing" constant="16" id="f6g-SE-EPj"/>
+                            <constraint firstItem="Zx2-Pe-ToL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="jUh-7N-4g2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="t1a-vC-5gx" secondAttribute="bottom" constant="47" id="vKZ-F6-bud"/>
+                            <constraint firstItem="blS-WR-9OZ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="wUK-Of-Dca"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Chords" largeTitleDisplayMode="never" id="FH5-fb-YgE"/>
                 </viewController>
