@@ -9,6 +9,9 @@ import UIKit
 
 final class ViewController: UIViewController {
 
+    @IBOutlet weak var chordDataLabel: UILabel!
+    @IBOutlet weak var keyPicker: UIPickerView!
+    @IBOutlet weak var chordPicker: UIPickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

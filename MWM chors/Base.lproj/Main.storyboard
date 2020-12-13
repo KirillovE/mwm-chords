@@ -62,6 +62,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Chords" largeTitleDisplayMode="never" id="FH5-fb-YgE"/>
+                    <connections>
+                        <outlet property="chordDataLabel" destination="Zx2-Pe-ToL" id="Br9-jZ-uhF"/>
+                        <outlet property="chordPicker" destination="t1a-vC-5gx" id="aZ5-VN-e9Z"/>
+                        <outlet property="keyPicker" destination="oaX-fr-vER" id="sjn-eI-1sV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
