@@ -23,6 +23,6 @@ extension TextualError: CustomStringConvertible {
 
 extension TextualError: CustomDebugStringConvertible {
     var debugDescription: String {
-        "\(loc("error")): \(description)"
+        "Error: \(description)"
     }
 }
