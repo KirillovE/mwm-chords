@@ -6,6 +6,7 @@
 //
 
 struct ModelProvider {
+    
     private let networkController = NetworkController()
     private let alertHandler = AlertErrorHandler()
     
@@ -20,4 +21,5 @@ struct ModelProvider {
             }
         }
     }
+    
 }

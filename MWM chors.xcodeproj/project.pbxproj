@@ -69,20 +69,44 @@
 			isa = PBXGroup;
 			children = (
 				3E4008A22586370600A8D48B /* AppDelegate.swift */,
-				3E4008E32586571900A8D48B /* AllChordsData.swift */,
-				3E4008A62586370600A8D48B /* ViewController.swift */,
-				3E4008FF2586635600A8D48B /* ModelProvider.swift */,
-				3E4008EA25865A7800A8D48B /* NetworkController.swift */,
-				3E4008FC2586622600A8D48B /* AlertErrorHandler.swift */,
-				3E4008F025865EDA00A8D48B /* PickerChordsData.swift */,
-				3E4008ED25865BE900A8D48B /* TextualError.swift */,
-				3E4008A82586370600A8D48B /* Main.storyboard */,
+				3E40090A2586768C00A8D48B /* Flow */,
+				3E4009052586760600A8D48B /* DataModel */,
+				3E4009072586762D00A8D48B /* Service */,
 				3E4008AB2586370900A8D48B /* Assets.xcassets */,
-				3E4008AD2586370900A8D48B /* LaunchScreen.storyboard */,
 				3E4008B02586370900A8D48B /* Info.plist */,
 				3E40090225866D7200A8D48B /* Array+safe.swift */,
 			);
 			path = "MWM chors";
+			sourceTree = "<group>";
+		};
+		3E4009052586760600A8D48B /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				3E4008E32586571900A8D48B /* AllChordsData.swift */,
+				3E4008F025865EDA00A8D48B /* PickerChordsData.swift */,
+				3E4008ED25865BE900A8D48B /* TextualError.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		3E4009072586762D00A8D48B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3E4008FF2586635600A8D48B /* ModelProvider.swift */,
+				3E4008EA25865A7800A8D48B /* NetworkController.swift */,
+				3E4008FC2586622600A8D48B /* AlertErrorHandler.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		3E40090A2586768C00A8D48B /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				3E4008AD2586370900A8D48B /* LaunchScreen.storyboard */,
+				3E4008A62586370600A8D48B /* ViewController.swift */,
+				3E4008A82586370600A8D48B /* Main.storyboard */,
+			);
+			path = Flow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
