@@ -114,10 +114,15 @@ extension ViewController: UIPickerViewDelegate {
         reusing view: UIView?
     ) -> UIView {
         let label = UILabel()
-        label.text = pickerView === keyPicker
-            ? chordsData[safe: row]?.keyName
-            : chordsData[safe: currentKeyIndex]?.chordSuffixes[safe: row]
         label.transform = CGAffineTransform(rotationAngle: .pi / 2)
+        
+        if pickerView === keyPicker {
+            label.font = .preferredFont(forTextStyle: .largeTitle)
+            label.text = chordsData[safe: row]?.keyName
+        } else {
+            label.font = .preferredFont(forTextStyle: .headline)
+            label.text = chordsData[safe: currentKeyIndex]?.chordSuffixes[safe: row]
+        }
         return label
     }
     
